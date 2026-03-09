@@ -1,0 +1,9 @@
+{
+  "name": "mediawiki-kb",
+  "version": "0.1.0",
+  "description": "MediaWiki knowledge base manager — scaffolds, organizes, and maintains a structured wiki for projects and ventures",
+  "author": {
+    "name": "Mike Schiff"
+  },
+  "keywords": ["mediawiki", "knowledge-base", "wiki", "documentation"]
+}
