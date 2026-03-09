@@ -1,0 +1,25 @@
+{
+  "name": "mediawiki-kb",
+  "id": "mediawiki-kb",
+  "owner": {
+    "name": "Schifftacular"
+  },
+  "metadata": {
+    "description": "MediaWiki knowledge base manager — scaffolds, organizes, and maintains a structured wiki for projects and ventures",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "mediawiki-kb",
+      "source": "./",
+      "description": "MediaWiki knowledge base manager — scaffolds, organizes, and maintains a structured wiki for projects and ventures",
+      "version": "0.1.0",
+      "author": {
+        "name": "Mike Schiff"
+      },
+      "keywords": ["mediawiki", "knowledge-base", "wiki", "documentation"],
+      "category": "productivity",
+      "strict": false
+    }
+  ]
+}
