@@ -2,7 +2,7 @@
   "mcpServers": {
     "mediawiki": {
       "command": "/Users/mike/Projects/wiki-plugin/.venv/bin/python",
-      "args": ["/Users/mike/Projects/wiki-plugin/plugin/server/server.py"],
+      "args": ["/Users/mike/Projects/wiki-plugin/server/server.py"],
       "env": {
         "WIKI_URL": "https://palegreen-starling-721736.hostingersite.com",
         "WIKI_BOT_USER": "Mike@claude-mcp",

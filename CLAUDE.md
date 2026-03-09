@@ -9,22 +9,21 @@ This is **mediawiki-kb**, a Claude Code plugin that scaffolds, organizes, and ma
 ## Architecture
 
 ```
-plugin/
-├── .claude-plugin/plugin.json   # Plugin manifest (name, version, keywords)
-├── .mcp.json                    # MCP server configuration (mediawiki server)
-├── server/
-│   └── server.py                # Python MCP server using FastMCP + httpx
-├── commands/
-│   ├── new-project.md           # /new-project — scaffolds ~52 wiki pages across 8 domains
-│   └── audit.md                 # /audit — health check for wiki content (stubs, staleness, orphans, broken links)
-├── skills/
-│   └── wiki-management/
-│       ├── SKILL.md             # Core wiki management skill (page hierarchy, behavioral rules, editing guidelines)
-│       └── references/          # Per-domain template definitions (brand, marketing, product, dev, ops, legal, finance, summary)
-├── agents/
-│   └── wiki-organizer.md        # Agent for bulk restructuring, category reorganization, template compliance
-└── hooks/
-    └── hooks.json               # UserPromptSubmit hook — auto-loads wiki context from CLAUDE.md `wiki-context:` lines
+.claude-plugin/plugin.json       # Plugin manifest (name, version, keywords)
+.mcp.json                        # MCP server configuration (mediawiki server)
+server/
+└── server.py                    # Python MCP server using FastMCP + httpx
+commands/
+├── new-project.md               # /new-project — scaffolds ~52 wiki pages across 8 domains
+└── audit.md                     # /audit — health check for wiki content (stubs, staleness, orphans, broken links)
+skills/
+└── wiki-management/
+    ├── SKILL.md                 # Core wiki management skill (page hierarchy, behavioral rules, editing guidelines)
+    └── references/              # Per-domain template definitions (brand, marketing, product, dev, ops, legal, finance, summary)
+agents/
+└── wiki-organizer.md            # Agent for bulk restructuring, category reorganization, template compliance
+hooks/
+└── hooks.json                   # UserPromptSubmit hook — auto-loads wiki context from CLAUDE.md `wiki-context:` lines
 ```
 
 ### MCP Server (`server/server.py`)
@@ -50,13 +49,13 @@ Each domain has sub-pages with stub templates containing "Claude Instructions" (
 ```bash
 # Python venv is at .venv/ in project root
 source .venv/bin/activate
-pip install -r plugin/server/requirements.txt   # mcp>=1.0.0, httpx>=0.27.0, pydantic>=2.0.0
+pip install -r server/requirements.txt   # mcp>=1.0.0, httpx>=0.27.0, pydantic>=2.0.0
 ```
 
 ### Running the MCP server locally
 
 ```bash
-python plugin/server/server.py
+python server/server.py
 ```
 
 Requires env vars: `WIKI_URL`, `WIKI_BOT_USER`, `WIKI_BOT_PASS` (configured in `.mcp.json`).
